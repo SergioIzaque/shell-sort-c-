@@ -1,0 +1,32 @@
+#define TAM 6
+
+#include <iostream>
+
+int main()
+{
+    int gap = TAM - 1;
+    int vet[] = {4,10,24,1,90,7};
+    
+    do
+    {
+        for(int i=0;i<TAM;i++)
+            if(vet[i]>vet[i+gap])
+            {
+                int a = vet[i];
+                vet[i] = vet[i+gap];
+                vet[i+gap] = a;
+                gap--;
+            }
+    }
+    while(gap);
+    
+    for (int i=0;i<TAM;i++)
+        std::cout<<vet[i];
+}
+
+gap=1;
+while(gap<TAM)
+{
+    gap=(gap*3)+1;
+}
+gap/=3;
