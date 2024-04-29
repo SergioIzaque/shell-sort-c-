@@ -1,0 +1,26 @@
+#include <iostream>
+#define TAM 6
+
+int main()
+{
+    int vet[] = {4,8,6,2,7,3};
+    
+    for(int i=0;i<TAM;i++)
+    {
+        int menor = i;
+        
+        for(int j=i+1;j<TAM;j++)
+        {
+            if (vet[j]<vet[menor])
+            {
+                menor = j;
+            }
+        }
+        
+        int aux = vet[i];
+        vet[i] = vet[menor];
+        vet[menor] = aux;
+    }
+    for (int i=0;i<TAM;i++)
+        std::cout<<vet[i]<<',';
+}
